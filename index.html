@@ -1,59 +1,54 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Iuvo Consulting - Digital Solutions That Drive Results</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              "iuvo-dark": "#1a2332",
-              "iuvo-darker": "#0f1419",
-              "iuvo-teal": "#4fd1c7",
-              "iuvo-teal-dark": "#38b2ac",
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "iuvo-dark": "#1a2332",
+                        "iuvo-darker": "#0f1419",
+                        "iuvo-teal": "#4fd1c7",
+                        "iuvo-teal-dark": "#38b2ac",
+                        "iuvo-light-teal": "#a7f3d0",
+                        "iuvo-mint": "#d1fae5",
+                    },
+                    backgroundImage: {
+                        "hero-gradient": "linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #2d3748 100%)",
+                    },
+                },
             },
-            backgroundImage: {
-              "hero-gradient":
-                "linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #2d3748 100%)",
-            },
-          },
-        },
-      };
+        };
     </script>
-  </head>
-  <body class="font-sans">
+</head>
+
+<body class="font-sans">
     <!-- Hero Section -->
     <section class="min-h-screen bg-hero-gradient relative overflow-hidden">
-      <!-- Navigation -->
-      <nav class="relative z-10 px-4 sm:px-6 lg:px-12 py-4 sm:py-6">
-        <div class="flex items-center justify-between">
-          <!-- Logo -->
-          <div class="flex items-center space-x-2 sm:space-x-3">
-            <!-- Logo Image -->
-            <div class="flex items-center">
-              <img 
-                src="./img/iovo.png" 
-                alt="Iuvo Consulting Logo" 
-                class="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 object-contain hover:scale-105 transition-transform duration-300"
-                loading="eager"
-              />
-            </div>
-            <div class="text-white">
-              <div class="text-lg sm:text-xl lg:text-2xl font-bold">Iuvo</div>
-              <div class="text-xs sm:text-sm lg:text-base text-gray-300 -mt-1">
-                Consulting
-              </div>
-            </div>
-          </div>
-          <!-- Desktop Navigation -->
-          <div class="hidden lg:flex items-center space-x-8">
-            <a
-              href="#home"
-              class="text-white hover:text-iuvo-teal transition-colors font-medium"
-              >Home</a
+        <!-- Navigation -->
+        <nav class="relative z-10 px-4 sm:px-6 lg:px-12 py-4 sm:py-6">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2 sm:space-x-3">
+                    <!-- Logo Image -->
+                    <div class="flex items-center">
+                        <img src="./img/iovo.png" alt="Iuvo Consulting Logo" class="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 object-contain hover:scale-105 transition-transform duration-300" loading="eager" />
+                    </div>
+                    <div class="text-white">
+                        <div class="text-lg sm:text-xl lg:text-2xl font-bold">Iuvo</div>
+                        <div class="text-xs sm:text-sm lg:text-base text-gray-300 -mt-1">
+                            Consulting
+                        </div>
+                    </div>
+                </div>
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="text-white hover:text-iuvo-teal transition-colors font-medium">Home</a
             >
             <a
               href="#about"
@@ -135,7 +130,7 @@
               ></div>
               <!-- Main Image Container - Positioned to fit perfectly inside the circle -->
               <div
-                class="absolute top-3 left-3 sm:top-1 sm:left-1 md:top-1 md:left-1 lg:top-1 lg:left-1 xl:top-1 xl:left-1 w-66 h-66 sm:w-72 sm:h-72 md:w-84 md:h-84 lg:w-[438px] lg:h-[438px] xl:w-[538px] xl:h-[538px] rounded-full overflow-hidden"
+                class="absolute top-3 left-3 sm:top-4 sm:left-4 md:top-6 md:left-6 lg:top-6 lg:left-6 xl:top-6 xl:left-6 w-66 h-66 sm:w-72 sm:h-72 md:w-84 md:h-84 lg:w-[438px] lg:h-[438px] xl:w-[538px] xl:h-[538px] rounded-full overflow-hidden"
               >
                 <img
                   src="./img/busines.png"
@@ -206,6 +201,201 @@
         </div>
       </div>
     </section>
+
+    <!-- Services Section -->
+    <section class="relative bg-gradient-to-br from-iuvo-mint to-iuvo-light-teal py-16 sm:py-20 lg:py-24 overflow-hidden">
+      <!-- City Skyline Background -->
+      <div class="absolute inset-0 opacity-20">
+        <svg viewBox="0 0 1200 400" class="w-full h-full" preserveAspectRatio="xMidYEnd slice">
+          <!-- City Skyline SVG -->
+          <rect x="0" y="200" width="80" height="200" fill="currentColor" class="text-iuvo-teal-dark"/>
+          <rect x="90" y="150" width="60" height="250" fill="currentColor" class="text-iuvo-teal-dark"/>
+          <rect x="160" y="180" width="70" height="220" fill="currentColor" class="text-iuvo-teal-dark"/>
+          <rect x="240" y="120" width="50" height="280" fill="currentColor" class="text-iuvo-teal-dark"/>
+          <rect x="300" y="160" width="80" height="240" fill="currentColor" class="text-iuvo-teal-dark"/>
+          <rect x="390" y="100" width="60" height="300" fill="currentColor" class="text-iuvo-teal-dark"/>
+          <rect x="460" y="140" width="70" height="260" fill="currentColor" class="text-iuvo-teal-dark"/>
+          <rect x="540" y="80" width="90" height="320" fill="currentColor" class="text-iuvo-teal-dark"/>
+          <rect x="640" y="130" width="60" height="270" fill="currentColor" class="text-iuvo-teal-dark"/>
+          <rect x="710" y="170" width="80" height="230" fill="currentColor" class="text-iuvo-teal-dark"/>
+          <rect x="800" y="110" width="70" height="290" fill="currentColor" class="text-iuvo-teal-dark"/>
+          <rect x="880" y="150" width="60" height="250" fill="currentColor" class="text-iuvo-teal-dark"/>
+          <rect x="950" y="90" width="80" height="310" fill="currentColor" class="text-iuvo-teal-dark"/>
+          <rect x="1040" y="160" width="70" height="240" fill="currentColor" class="text-iuvo-teal-dark"/>
+          <rect x="1120" y="200" width="80" height="200" fill="currentColor" class="text-iuvo-teal-dark"/>
+        </svg>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <!-- Header -->
+        <div class="text-center mb-12 sm:mb-16 lg:mb-20">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 sm:mb-6">
+            We are looking for successful brands
+          </h2>
+          <p class="text-lg sm:text-xl lg:text-2xl text-gray-700 mb-8 sm:mb-12">
+            to help them grow faster without losing their essence.
+          </p>
+          <h3 class="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800">
+            You can start your process with iuvo if:
+          </h3>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
+          <!-- Left Column -->
+          <div class="space-y-6 sm:space-y-8">
+            <!-- Service Item 1 -->
+            <div class="flex items-start space-x-4 sm:space-x-6">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <svg class="w-6 h-6 sm:w-7 sm:h-7 text-iuvo-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="flex-1">
+                <p class="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+                  Been experiencing difficulties in maintaining or improving your profit margins
+                </p>
+              </div>
+            </div>
+
+            <!-- Service Item 2 -->
+            <div class="flex items-start space-x-4 sm:space-x-6">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <svg class="w-6 h-6 sm:w-7 sm:h-7 text-iuvo-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="flex-1">
+                <p class="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+                  Are you satisfied with your current document management system?
+                </p>
+              </div>
+            </div>
+
+            <!-- Service Item 3 -->
+            <div class="flex items-start space-x-4 sm:space-x-6">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <svg class="w-6 h-6 sm:w-7 sm:h-7 text-iuvo-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="flex-1">
+                <p class="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+                  Concerns regarding the security or accessibility of your documents
+                </p>
+              </div>
+            </div>
+
+            <!-- Service Item 4 -->
+            <div class="flex items-start space-x-4 sm:space-x-6">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <svg class="w-6 h-6 sm:w-7 sm:h-7 text-iuvo-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="flex-1">
+                <p class="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+                  Difficulties on your logistic and warehousing management?
+                </p>
+              </div>
+            </div>
+
+            <!-- Service Item 5 -->
+            <div class="flex items-start space-x-4 sm:space-x-6">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <svg class="w-6 h-6 sm:w-7 sm:h-7 text-iuvo-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="flex-1">
+                <p class="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+                  Do you need to leverage your digital marketing?
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="space-y-6 sm:space-y-8">
+            <!-- Service Item 6 -->
+            <div class="flex items-start space-x-4 sm:space-x-6">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <svg class="w-6 h-6 sm:w-7 sm:h-7 text-iuvo-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="flex-1">
+                <p class="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+                  Need to improve your human resource experience in digital
+                </p>
+              </div>
+            </div>
+
+            <!-- Service Item 7 -->
+            <div class="flex items-start space-x-4 sm:space-x-6">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <svg class="w-6 h-6 sm:w-7 sm:h-7 text-iuvo-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="flex-1">
+                <p class="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+                  You need data solution insight to improve customer engagement
+                </p>
+              </div>
+            </div>
+
+            <!-- Service Item 8 -->
+            <div class="flex items-start space-x-4 sm:space-x-6">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <svg class="w-6 h-6 sm:w-7 sm:h-7 text-iuvo-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="flex-1">
+                <p class="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+                  You need a specific customized business solution-> tailor the project to your specific needs and objectives, customized to meet your specific goals and deliverables
+                </p>
+              </div>
+            </div>
+
+            <!-- Service Item 9 -->
+            <div class="flex items-start space-x-4 sm:space-x-6">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <svg class="w-6 h-6 sm:w-7 sm:h-7 text-iuvo-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="flex-1">
+                <p class="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+                  Need to improve your workflow efficiency
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script>
       function toggleMobileMenu() {
         const mobileMenu = document.getElementById("mobile-menu");
