@@ -3,222 +3,403 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us</title>
+    <title>About Us - Iuvo Consulting</title>
     <link href="./output.css" rel="stylesheet" />
+    <style>
+      /* Smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Smooth fade in animation */
+      @keyframes smoothFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Elegant scroll-based animations */
+      .smooth-reveal {
+        opacity: 0;
+        transform: translateY(0);
+        transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                    transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .smooth-reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Gradual content reveal */
+      .content-fade {
+        opacity: 0;
+        transition: opacity 1.5s ease-out;
+      }
+
+      .content-fade.visible {
+        opacity: 1;
+      }
+
+      /* Smooth section transitions */
+      .section-smooth {
+        opacity: 0;
+        transform: translateY(0);
+        transition: all 1.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+
+      .section-smooth.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Elegant button hover */
+      .btn-elegant {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .btn-elegant::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        transition: left 0.6s ease;
+      }
+
+      .btn-elegant:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 25px rgba(56, 173, 167, 0.2);
+      }
+
+      .btn-elegant:hover::before {
+        left: 100%;
+      }
+
+      /* Subtle navigation effects */
+      .nav-elegant {
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .nav-elegant::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        width: 0;
+        height: 1px;
+        background: #38ADA7;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      .nav-elegant:hover::after {
+        width: 100%;
+      }
+
+      /* Logo subtle animation */
+      .logo-elegant {
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .logo-elegant:hover {
+        transform: scale(1.02);
+        filter: brightness(1.1);
+      }
+
+      /* Mobile menu elegant */
+      .mobile-menu-elegant {
+        backdrop-filter: blur(20px);
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .mobile-item {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .mobile-menu-elegant.show .mobile-item {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .mobile-menu-elegant.show .mobile-item:nth-child(1) { transition-delay: 0.1s; }
+      .mobile-menu-elegant.show .mobile-item:nth-child(2) { transition-delay: 0.15s; }
+      .mobile-menu-elegant.show .mobile-item:nth-child(3) { transition-delay: 0.2s; }
+      .mobile-menu-elegant.show .mobile-item:nth-child(4) { transition-delay: 0.25s; }
+
+      /* Elegant text gradient */
+      .text-gradient {
+        background: linear-gradient(135deg, #38ADA7, #2A7A77);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Subtle feature hover */
+      .feature-elegant {
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        border-radius: 8px;
+        padding: 1rem;
+      }
+
+      .feature-elegant:hover {
+        background: rgba(56, 173, 167, 0.03);
+        transform: translateX(5px);
+      }
+
+      /* Icon subtle animation */
+      .icon-elegant {
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .icon-elegant:hover {
+        transform: scale(1.05);
+      }
+
+      /* Footer elegant links */
+      .footer-elegant {
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .footer-elegant:hover {
+        color: #38ADA7;
+        transform: translateX(3px);
+      }
+
+      /* Smooth parallax background */
+      .parallax-smooth {
+        will-change: transform;
+        transition: transform 0.1s ease-out;
+      }
+
+      /* Elegant loading state */
+      .loading-elegant {
+        background: linear-gradient(90deg, #f8f9fa 25%, #e9ecef 50%, #f8f9fa 75%);
+        background-size: 200% 100%;
+        animation: shimmer 2s infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
+
+      /* Smooth text reveal */
+      .text-smooth {
+        opacity: 0;
+        transition: opacity 2s ease-out;
+      }
+
+      .text-smooth.visible {
+        opacity: 1;
+      }
+
+      /* Progressive content loading */
+      .progressive-load {
+        opacity: 0;
+        transform: translateY(5px);
+        transition: all 1s ease-out;
+      }
+
+      .progressive-load.loaded {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Responsive improvements */
+      @media (max-width: 768px) {
+        .smooth-reveal {
+          transition-duration: 1s;
+        }
+        
+        .section-smooth {
+          transition-duration: 1.2s;
+        }
+      }
+
+      /* Reduce motion for accessibility */
+      @media (prefers-reduced-motion: reduce) {
+        .smooth-reveal,
+        .section-smooth,
+        .content-fade,
+        .text-smooth,
+        .progressive-load {
+          transition: none;
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Navigation -->
     <nav class="relative z-10 bg-[#0B1D2A] px-4 sm:px-6 lg:px-12 py-4 sm:py-6">
-      <div
-        class="flex items-center justify-between max-w-6xl justify-self-center w-full"
-      >
+      <div class="flex items-center justify-between max-w-6xl justify-self-center w-full">
         <!-- Logo -->
         <div class="flex items-center space-x-2 sm:space-x-3">
-          <!-- Logo Image -->
-           <a href="./index.html">
-             <img
-               src="../img/logo.svg"
-               alt="Iuvo Consulting Logo"
-               class="w-40 hover:scale-105 transition-transform duration-300"
-               loading="eager"
-             />
-             </a>
+          <a href="./index.html">
+            <img
+              src="../img/logo.svg"
+              alt="Iuvo Consulting Logo"
+              class="w-40 logo-elegant"
+              loading="eager"
+            />
+          </a>
         </div>
         <!-- Desktop Navigation -->
         <div class="hidden lg:flex items-center space-x-8">
-          <a
-            href="./index.html"
-            class="text-white hover:text-[#38ADA7] transition-colors"
-            >Home</a
-          >
-          <a
-            href="./about.html"
-            class="text-gray-300 hover:text-[#38ADA7] transition-colors"
-            >About us</a
-          >
-          <a
-            href="./service.html"
-            class="text-gray-300 hover:text-[#38ADA7] transition-colors"
-            >Our Services</a
-          >
+          <a href="./index.html" class="text-gray-300 nav-elegant hover:text-[#38ADA7]">Home</a>
+          <a href="./about.html" class="text-white nav-elegant">About us</a>
+          <a href="./service.html" class="text-gray-300 nav-elegant hover:text-[#38ADA7]">Our Services</a>
           <a href="contact.html">
-            <button
-              class="bg-[#38ADA7] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#4f8280] transition-colors cursor-pointer"
-            >
+            <button class="bg-[#38ADA7] text-white px-6 py-3 rounded-full font-semibold btn-elegant cursor-pointer">
               Contact us
             </button>
           </a>
         </div>
         <!-- Mobile Menu Button -->
-        <button class="lg:hidden text-white p-2" onclick="toggleMobileMenu()">
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
+        <button class="lg:hidden text-white p-2 transition-transform duration-300 hover:scale-105" onclick="toggleMobileMenu()">
+          <svg class="w-6 h-6 transition-transform duration-300" id="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
       </div>
     </nav>
+
     <!-- Mobile Navigation Menu -->
-    <div
-      class="lg:hidden fixed inset-0 bg-[#0B1D2A] bg-opacity-95 z-50 hidden"
-      id="mobile-menu"
-    >
-      <div
-        class="flex flex-col items-center justify-center h-full space-y-6 sm:space-y-8 px-6"
-      >
-        <a
-          href="./index.html"
-          class="text-white text-xl sm:text-2xl font-medium hover:text-[#38ADA7] transition-colors"
-          onclick="toggleMobileMenu()"
-          >Home</a
-        >
-        <a
-          href="./about.html"
-          class="text-gray-300 text-xl sm:text-2xl hover:text-[#38ADA7] transition-colors"
-          onclick="toggleMobileMenu()"
-          >About us</a
-        >
-        <a
-          href="./service.html"
-          class="text-gray-300 text-xl sm:text-2xl hover:text-[#38ADA7] transition-colors"
-          onclick="toggleMobileMenu()"
-          >Our Services</a
-        >
-        <a href="contact.html">
-          <button
-            class="bg-[#38ADA7] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-[#38ADA7]-dark transition-colors"
-            onclick="toggleMobileMenu()"
-          >
+    <div class="lg:hidden fixed inset-0 bg-[#0B1D2A] bg-opacity-95 z-50 hidden mobile-menu-elegant" id="mobile-menu">
+      <div class="flex flex-col items-center justify-center h-full space-y-6 sm:space-y-8 px-6">
+        <a href="./index.html" class="text-gray-300 text-xl sm:text-2xl font-medium hover:text-[#38ADA7] transition-colors mobile-item" onclick="toggleMobileMenu()">Home</a>
+        <a href="./about.html" class="text-white text-xl sm:text-2xl mobile-item" onclick="toggleMobileMenu()">About us</a>
+        <a href="./service.html" class="text-gray-300 text-xl sm:text-2xl hover:text-[#38ADA7] transition-colors mobile-item" onclick="toggleMobileMenu()">Our Services</a>
+        <a href="contact.html" class="mobile-item">
+          <button class="bg-[#38ADA7] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg btn-elegant" onclick="toggleMobileMenu()">
             Contact us
           </button>
         </a>
-        <button
-          class="absolute top-6 right-6 sm:top-8 sm:right-8 text-white text-2xl sm:text-3xl p-2"
-          onclick="toggleMobileMenu()"
-        >
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
+        <button class="absolute top-6 right-6 sm:top-8 sm:right-8 text-white text-2xl sm:text-3xl p-2 transition-transform duration-300 hover:rotate-45" onclick="toggleMobileMenu()">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </div>
     </div>
 
-    <section
-      class="bg-[#0B1D2A] flex-row justify-items-center py-20 bg-no-repeat bg-top"
-      style="background-image: url('../img/hero-about.png')"
-    >
+    <!-- Hero Section -->
+    <section class="bg-[#0B1D2A] flex-row justify-items-center py-20 bg-no-repeat bg-top parallax-smooth" style="background-image: url('../img/hero-about.png')">
       <div class="max-w-4xl flex flex-col gap-10">
-        <h1 class="text-center font-semibold text-[30px] text-white">About Us</h1>
-        <p class="text-white text-justify">
-          Welcome to Iuvo Solution, where cutting-edge technology meets business
-          brilliance. At Iuvo, we are dedicated to transforming your business
-          landscape through advanced technological solutions that drive
-          efficiency, growth, and competitive advantage. Our team of visionary
-          engineers and strategic thinkers combines deep industry knowledge with
-          pioneering tech expertise to deliver customized solutions that address
-          your unique challenges and goals. <br /><br />
-          We believe that technology should be a catalyst for progress, not a
-          barrier to success. That's why we focus on understanding your business
-          inside and out, creating tailored strategies that integrate seamlessly
-          with your operations. From streamlining processes and enhancing
-          productivity to leveraging data insights and fostering innovation, our
-          solutions are designed to propel your business forward. <br /><br />
-          At Iuvo Solutions, we are committed to excellence, collaboration, and
-          continuous improvement. With more than 10 years' experience in
-          Business Development, Cloud Implementation, IT system and operation
-          management, our mission is to empower businesses like yours with the
-          tools and insights needed to thrive in an ever-evolving digital world.
-          Let us help you unlock your full potential and achieve remarkable
-          success through technology.
-        </p>
+        <h1 class="text-center font-semibold text-[30px] text-white content-fade">About Us</h1>
+        <div class="text-white text-justify">
+          <p class="mb-6 leading-relaxed text-smooth">
+            Welcome to <span class="text-gradient font-semibold">Iuvo Solution</span>, where cutting-edge technology meets business
+            brilliance. At Iuvo, we are dedicated to transforming your business
+            landscape through advanced technological solutions that drive
+            efficiency, growth, and competitive advantage. Our team of visionary
+            engineers and strategic thinkers combines deep industry knowledge with
+            pioneering tech expertise to deliver customized solutions that address
+            your unique challenges and goals.
+          </p>
+          <p class="mb-6 leading-relaxed text-smooth">
+            We believe that technology should be a catalyst for progress, not a
+            barrier to success. That's why we focus on understanding your business
+            inside and out, creating tailored strategies that integrate seamlessly
+            with your operations. From streamlining processes and enhancing
+            productivity to leveraging data insights and fostering innovation, our
+            solutions are designed to propel your business forward.
+          </p>
+          <p class="leading-relaxed text-smooth">
+            At <span class="text-gradient font-semibold">Iuvo Solutions</span>, we are committed to excellence, collaboration, and
+            continuous improvement. With more than <span class="text-[#38ADA7] font-semibold">10 years' experience</span> in
+            Business Development, Cloud Implementation, IT system and operation
+            management, our mission is to empower businesses like yours with the
+            tools and insights needed to thrive in an ever-evolving digital world.
+            Let us help you unlock your full potential and achieve remarkable
+            success through technology.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section
-      class="bg-[#E9FFFE] flex-row justify-items-center px-4 sm:px-6 lg:px-12 py-8 sm:py-12"
-      style="background-image: url('../img/bg-sec2.svg')"
-    >
+    <!-- Features Section -->
+    <section class="bg-[#E9FFFE] section-smooth flex-row justify-items-center px-4 sm:px-6 lg:px-12 py-8 sm:py-12" style="background-image: url('../img/bg-sec2.svg')">
       <div class="max-w-6xl w-full py-20 flex-column gap-20">
-        <h2 class="text-[30px] text-center">
-          <span class="font-semibold">We are looking for successful brands</span
-          ><br />to help them grow faster without losing their essence.
+        <h2 class="text-[30px] text-center progressive-load">
+          <span class="font-semibold text-gradient">We are looking for successful brands</span><br />to help them grow faster without losing their essence.
         </h2>
-        <p class="text-[24px] sm:text-[28px] font-semibold mt-20">
+        <p class="text-[24px] sm:text-[28px] font-semibold mt-20 progressive-load">
           You can start your process with iuvo if:
         </p>
         <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-20">
-          <div class="flex flex-row gap-3 items-center">
-            <img src="../img/icon1.svg" alt="icon1" />
+          <div class="flex flex-row gap-3 items-center feature-elegant progressive-load">
+            <img src="../img/icon1.svg" alt="icon1" class="icon-elegant" />
             <p class="font-medium text-[#3D484D] text-[20px]">
               Been experiencing difficulties in maintaining or improving your
               profit margins
             </p>
           </div>
-          <div class="flex flex-row gap-3 items-center">
-            <img src="../img/icon6.svg" alt="icon1" />
+          <div class="flex flex-row gap-3 items-center feature-elegant progressive-load">
+            <img src="../img/icon6.svg" alt="icon1" class="icon-elegant" />
             <p class="font-medium text-[#3D484D] text-[20px]">
               Need to improve your human resource experience in digital
             </p>
           </div>
-          <div class="flex flex-row gap-3 items-center">
-            <img src="../img/icon2.svg" alt="icon1" />
+          <div class="flex flex-row gap-3 items-center feature-elegant progressive-load">
+            <img src="../img/icon2.svg" alt="icon1" class="icon-elegant" />
             <p class="font-medium text-[#3D484D] text-[20px]">
               Are you satisfied with your current document management system?
             </p>
           </div>
-          <div class="flex flex-row gap-3 items-center">
-            <img src="../img/icon7.svg" alt="icon1" />
+          <div class="flex flex-row gap-3 items-center feature-elegant progressive-load">
+            <img src="../img/icon7.svg" alt="icon1" class="icon-elegant" />
             <p class="font-medium text-[#3D484D] text-[20px]">
               You need data solution insight to improve customer engagement
             </p>
           </div>
-          <div class="flex flex-row gap-3 items-center">
-            <img src="../img/icon3.svg" alt="icon1" />
+          <div class="flex flex-row gap-3 items-center feature-elegant progressive-load">
+            <img src="../img/icon3.svg" alt="icon1" class="icon-elegant" />
             <p class="font-medium text-[#3D484D] text-[20px]">
               Concerns regarding the security or accessibility of your documents
             </p>
           </div>
-          <div class="flex flex-row gap-3 items-center">
-            <img src="../img/icon8.svg" alt="icon1" />
+          <div class="flex flex-row gap-3 items-center feature-elegant progressive-load">
+            <img src="../img/icon8.svg" alt="icon1" class="icon-elegant" />
             <p class="font-medium text-[#3D484D] text-[20px]">
               You need a specific customized business solution-> Tailor the
               project to your specific needs and objectives, customized to meet
               your specific goals and deliverables
             </p>
           </div>
-          <div class="flex flex-row gap-3 items-center">
-            <img src="../img/icon4.svg" alt="icon1" />
+          <div class="flex flex-row gap-3 items-center feature-elegant progressive-load">
+            <img src="../img/icon4.svg" alt="icon1" class="icon-elegant" />
             <p class="font-medium text-[#3D484D] text-[20px]">
               Difficulties on your logistic and warehousing management?
             </p>
           </div>
-          <div class="flex flex-row gap-3 items-center">
-            <img src="../img/icon9.svg" alt="icon1" />
+          <div class="flex flex-row gap-3 items-center feature-elegant progressive-load">
+            <img src="../img/icon9.svg" alt="icon1" class="icon-elegant" />
             <p class="font-medium text-[#3D484D] text-[20px]">
               Need to improve your workflow efficiency
             </p>
           </div>
-          <div class="flex flex-row gap-3 items-center">
-            <img src="../img/icon5.svg" alt="icon1" />
+          <div class="flex flex-row gap-3 items-center feature-elegant progressive-load">
+            <img src="../img/icon5.svg" alt="icon1" class="icon-elegant" />
             <p class="font-medium text-[#3D484D] text-[20px]">
               Do you need to leverage your digital marketing?
             </p>
@@ -227,22 +408,19 @@
       </div>
     </section>
 
-    <footer
-      class="flex-row justify-items-center bg-[#0B1D2A] lg:py-20 px-4 sm:px-6 lg:px-12 py-8 sm:py-12"
-    >
+    <!-- Footer -->
+    <footer class="flex-row justify-items-center bg-[#0B1D2A] lg:py-20 px-4 sm:px-6 lg:px-12 py-8 sm:py-12">
       <div class="max-w-6xl">
         <div class="flex flex-col gap-10">
-          <div
-            class="flex flex-row justify-between gap-10 sm:gap-20 flex-wrap sm:flex-nowrap"
-          >
+          <div class="flex flex-row justify-between gap-10 sm:gap-20 flex-wrap sm:flex-nowrap content-fade">
             <div class="flex flex-col gap-5 sm:w-[40%]">
-              <img src="../img/logo.svg" alt="logo" class="w-50" />
+              <img src="../img/logo.svg" alt="logo" class="w-50 logo-elegant" />
               <h3 class="text-[#E8965A] font-semibold text-[20px]">
                 Digital Solutions That Drive Results
               </h3>
               <div class="flex flex-col gap-2">
                 <p class="text-[#B6C9C9] text-[14px]">Questions and contact</p>
-                <p class="text-white font-semibold text-[16px]">
+                <p class="text-white font-semibold text-[16px] hover:text-[#38ADA7] transition-colors cursor-pointer">
                   contact@iuvosolution.com
                 </p>
               </div>
@@ -260,25 +438,157 @@
             <div class="flex flex-col gap-5 sm:w-[20%]">
               <h3 class="text-white text-[20px] font-semibold">Navigation</h3>
               <div class="flex flex-col gap-2">
-                <a href="" class="text-[#B6C9C9]">Home</a>
-                <a href="" class="text-[#B6C9C9]">About Us</a>
-                <a href="" class="text-[#B6C9C9]">Our Service</a>
-                <a href="" class="text-[#B6C9C9]">Contact</a>
+                <a href="./index.html" class="text-[#B6C9C9] footer-elegant">Home</a>
+                <a href="./about.html" class="text-[#B6C9C9] footer-elegant">About Us</a>
+                <a href="./service.html" class="text-[#B6C9C9] footer-elegant">Our Service</a>
+                <a href="./contact.html" class="text-[#B6C9C9] footer-elegant">Contact</a>
               </div>
             </div>
           </div>
-          <div
-            class="flex flex-row justify-between items-center border-t-1 border-[#b6c9c95e] py-3"
-          >
+          <div class="flex flex-row justify-between items-center border-t-1 border-[#b6c9c95e] py-3 content-fade">
             <p class="text-[#B6C9C9]">© 2020 - 2025 Iuvo</p>
             <ul class="flex flex-row gap-3">
-              <li class="text-[#B6C9C9]">Terms of Service</li>
-              <li class="text-[#B6C9C9]">Privacy Policy</li>
+              <li class="text-[#B6C9C9] footer-elegant cursor-pointer">Terms of Service</li>
+              <li class="text-[#B6C9C9] footer-elegant cursor-pointer">Privacy Policy</li>
             </ul>
-            <img src="../img/logo-mini.svg" alt="" />
+            <img src="../img/logo-mini.svg" alt="" class="transition-transform duration-300 hover:scale-105" />
           </div>
         </div>
       </div>
     </footer>
+
+    <script>
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuIcon = document.getElementById("menu-icon");
+        
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("show");
+        
+        // Smooth icon rotation
+        if (mobileMenu.classList.contains("show")) {
+          menuIcon.style.transform = "rotate(45deg)";
+        } else {
+          menuIcon.style.transform = "rotate(0deg)";
+        }
+      }
+
+      // Smooth progressive loading
+      function progressiveLoad() {
+        const elements = document.querySelectorAll('.progressive-load');
+        const windowHeight = window.innerHeight;
+        
+        elements.forEach((element, index) => {
+          const elementTop = element.getBoundingClientRect().top;
+          const elementBottom = element.getBoundingClientRect().bottom;
+          
+          // Check if element is in viewport
+          if (elementTop < windowHeight && elementBottom > 0) {
+            setTimeout(() => {
+              element.classList.add('loaded');
+            }, index * 100); // Subtle stagger
+          }
+        });
+      }
+
+      // Smooth content fade
+      function smoothContentFade() {
+        const elements = document.querySelectorAll('.content-fade, .text-smooth, .section-smooth');
+        const windowHeight = window.innerHeight;
+        
+        elements.forEach(element => {
+          const elementTop = element.getBoundingClientRect().top;
+          const elementBottom = element.getBoundingClientRect().bottom;
+          
+          // More generous viewport detection for smoother transitions
+          if (elementTop < windowHeight * 0.8 && elementBottom > windowHeight * 0.2) {
+            element.classList.add('visible');
+          }
+        });
+      }
+
+      // Ultra smooth parallax
+      function ultraSmoothParallax() {
+        if (window.innerWidth > 1024) {
+          const scrolled = window.pageYOffset;
+          const parallaxElements = document.querySelectorAll('.parallax-smooth');
+          
+          parallaxElements.forEach(element => {
+            const speed = 0.2; // Very subtle
+            const yPos = -(scrolled * speed);
+            element.style.transform = `translate3d(0, ${yPos}px, 0)`;
+          });
+        }
+      }
+
+      // Initialize on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        // Immediate content fade for hero
+        setTimeout(() => {
+          document.querySelectorAll('.content-fade, .text-smooth').forEach(el => {
+            el.classList.add('visible');
+          });
+        }, 300);
+
+        // Progressive loading for other sections
+        setTimeout(() => {
+          progressiveLoad();
+          smoothContentFade();
+        }, 600);
+        
+        // Add loading animation to images
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+          if (!img.complete) {
+            img.classList.add('loading-elegant');
+            img.addEventListener('load', () => {
+              img.classList.remove('loading-elegant');
+            });
+          }
+        });
+
+        // Smooth anchor scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          });
+        });
+      });
+
+      // Ultra optimized scroll listener
+      let rafId = null;
+      function handleScroll() {
+        if (rafId) return;
+        
+        rafId = requestAnimationFrame(() => {
+          progressiveLoad();
+          smoothContentFade();
+          ultraSmoothParallax();
+          rafId = null;
+        });
+      }
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          const mobileMenu = document.getElementById("mobile-menu");
+          if (!mobileMenu.classList.contains('hidden')) {
+            toggleMobileMenu();
+          }
+        }
+      });
+
+      // Touch support
+      document.addEventListener('touchstart', function() {}, {passive: true});
+    </script>
   </body>
 </html>
