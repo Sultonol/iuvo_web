@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="relative z-10 bg-[#0B1D2A] px-4 sm:px-6 lg:px-12 py-4 sm:py-6">
+      <div
+        class="flex items-center justify-between max-w-6xl justify-self-center w-full"
+      >
+        <!-- Logo -->
+        <div class="flex items-center space-x-2 sm:space-x-3">
+          <!-- Logo Image -->
+           <a href="./index.html">
+             <img
+               src="./img/logo.svg"
+               alt="Iuvo Consulting Logo"
+               class="w-40 hover:scale-105 transition-transform duration-300"
+               loading="eager"
+             />
+             </a>
+        </div>
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a
+            href="./index.html"
+            class="text-white hover:text-[#38ADA7] transition-colors"
+            >Home</a
+          >
+          <a
+            href="./about.html"
+            class="text-gray-300 hover:text-[#38ADA7] transition-colors"
+            >About us</a
+          >
+          <a
+            href="./service.html"
+            class="text-gray-300 hover:text-[#38ADA7] transition-colors"
+            >Our Services</a
+          >
+          <a href="contact.html">
+            <button
+              class="bg-[#38ADA7] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#4f8280] transition-colors cursor-pointer"
+            >
+              Contact us
+            </button>
+          </a>
+        </div>
+        <!-- Mobile Menu Button -->
+        <button class="lg:hidden text-white p-2" onclick="toggleMobileMenu()">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <!-- Mobile Navigation Menu -->
+    <div
+      class="lg:hidden fixed inset-0 bg-[#0B1D2A] bg-opacity-95 z-50 hidden"
+      id="mobile-menu"
+    >
+      <div
+        class="flex flex-col items-center justify-center h-full space-y-6 sm:space-y-8 px-6"
+      >
+        <a
+          href="./index.html"
+          class="text-white text-xl sm:text-2xl font-medium hover:text-[#38ADA7] transition-colors"
+          onclick="toggleMobileMenu()"
+          >Home</a
+        >
+        <a
+          href="./about.html"
+          class="text-gray-300 text-xl sm:text-2xl hover:text-[#38ADA7] transition-colors"
+          onclick="toggleMobileMenu()"
+          >About us</a
+        >
+        <a
+          href="./service.html"
+          class="text-gray-300 text-xl sm:text-2xl hover:text-[#38ADA7] transition-colors"
+          onclick="toggleMobileMenu()"
+          >Our Services</a
+        >
+        <a href="contact.html">
+          <button
+            class="bg-[#38ADA7] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-[#38ADA7]-dark transition-colors"
+            onclick="toggleMobileMenu()"
+          >
+            Contact us
+          </button>
+        </a>
+        <button
+          class="absolute top-6 right-6 sm:top-8 sm:right-8 text-white text-2xl sm:text-3xl p-2"
+          onclick="toggleMobileMenu()"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <section
+      class="bg-[#0B1D2A] flex-row justify-items-center py-20 bg-no-repeat bg-top"
+      style="background-image: url('./img/hero-about.png')"
+    >
+      <div class="max-w-4xl flex flex-col gap-10">
+        <h1 class="text-center font-semibold text-[30px] text-white">About Us</h1>
+        <p class="text-white text-justify">
+          Welcome to Iuvo Solution, where cutting-edge technology meets business
+          brilliance. At Iuvo, we are dedicated to transforming your business
+          landscape through advanced technological solutions that drive
+          efficiency, growth, and competitive advantage. Our team of visionary
+          engineers and strategic thinkers combines deep industry knowledge with
+          pioneering tech expertise to deliver customized solutions that address
+          your unique challenges and goals. <br /><br />
+          We believe that technology should be a catalyst for progress, not a
+          barrier to success. That's why we focus on understanding your business
+          inside and out, creating tailored strategies that integrate seamlessly
+          with your operations. From streamlining processes and enhancing
+          productivity to leveraging data insights and fostering innovation, our
+          solutions are designed to propel your business forward. <br /><br />
+          At Iuvo Solutions, we are committed to excellence, collaboration, and
+          continuous improvement. With more than 10 years' experience in
+          Business Development, Cloud Implementation, IT system and operation
+          management, our mission is to empower businesses like yours with the
+          tools and insights needed to thrive in an ever-evolving digital world.
+          Let us help you unlock your full potential and achieve remarkable
+          success through technology.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="bg-[#E9FFFE] flex-row justify-items-center px-4 sm:px-6 lg:px-12 py-8 sm:py-12"
+      style="background-image: url('./img/bg-sec2.svg')"
+    >
+      <div class="max-w-6xl w-full py-20 flex-column gap-20">
+        <h2 class="text-[30px] text-center">
+          <span class="font-semibold">We are looking for successful brands</span
+          ><br />to help them grow faster without losing their essence.
+        </h2>
+        <p class="text-[24px] sm:text-[28px] font-semibold mt-20">
+          You can start your process with iuvo if:
+        </p>
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-20">
+          <div class="flex flex-row gap-3 items-center">
+            <img src="./img/icon1.svg" alt="icon1" />
+            <p class="font-medium text-[#3D484D] text-[20px]">
+              Been experiencing difficulties in maintaining or improving your
+              profit margins
+            </p>
+          </div>
+          <div class="flex flex-row gap-3 items-center">
+            <img src="./img/icon6.svg" alt="icon1" />
+            <p class="font-medium text-[#3D484D] text-[20px]">
+              Need to improve your human resource experience in digital
+            </p>
+          </div>
+          <div class="flex flex-row gap-3 items-center">
+            <img src="./img/icon2.svg" alt="icon1" />
+            <p class="font-medium text-[#3D484D] text-[20px]">
+              Are you satisfied with your current document management system?
+            </p>
+          </div>
+          <div class="flex flex-row gap-3 items-center">
+            <img src="./img/icon7.svg" alt="icon1" />
+            <p class="font-medium text-[#3D484D] text-[20px]">
+              You need data solution insight to improve customer engagement
+            </p>
+          </div>
+          <div class="flex flex-row gap-3 items-center">
+            <img src="./img/icon3.svg" alt="icon1" />
+            <p class="font-medium text-[#3D484D] text-[20px]">
+              Concerns regarding the security or accessibility of your documents
+            </p>
+          </div>
+          <div class="flex flex-row gap-3 items-center">
+            <img src="./img/icon8.svg" alt="icon1" />
+            <p class="font-medium text-[#3D484D] text-[20px]">
+              You need a specific customized business solution-> Tailor the
+              project to your specific needs and objectives, customized to meet
+              your specific goals and deliverables
+            </p>
+          </div>
+          <div class="flex flex-row gap-3 items-center">
+            <img src="./img/icon4.svg" alt="icon1" />
+            <p class="font-medium text-[#3D484D] text-[20px]">
+              Difficulties on your logistic and warehousing management?
+            </p>
+          </div>
+          <div class="flex flex-row gap-3 items-center">
+            <img src="./img/icon9.svg" alt="icon1" />
+            <p class="font-medium text-[#3D484D] text-[20px]">
+              Need to improve your workflow efficiency
+            </p>
+          </div>
+          <div class="flex flex-row gap-3 items-center">
+            <img src="./img/icon5.svg" alt="icon1" />
+            <p class="font-medium text-[#3D484D] text-[20px]">
+              Do you need to leverage your digital marketing?
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="flex-row justify-items-center bg-[#0B1D2A] lg:py-20 px-4 sm:px-6 lg:px-12 py-8 sm:py-12"
+    >
+      <div class="max-w-6xl">
+        <div class="flex flex-col gap-10">
+          <div
+            class="flex flex-row justify-between gap-10 sm:gap-20 flex-wrap sm:flex-nowrap"
+          >
+            <div class="flex flex-col gap-5 sm:w-[40%]">
+              <img src="./img/logo.svg" alt="logo" class="w-50" />
+              <h3 class="text-[#E8965A] font-semibold text-[20px]">
+                Digital Solutions That Drive Results
+              </h3>
+              <div class="flex flex-col gap-2">
+                <p class="text-[#B6C9C9] text-[14px]">Questions and contact</p>
+                <p class="text-white font-semibold text-[16px]">
+                  contact@iuvosolution.com
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col gap-5 sm:w-[40%]">
+              <h3 class="text-white text-[20px] font-semibold">Our Office</h3>
+              <p class="text-[#B6C9C9] text-[16px]">
+                Montes Urales 619 Piso 3 [Third floor] Lomas de Chapultepec,
+                CDMX 11000
+              </p>
+              <p class="text-[#B6C9C9] text-[16px]">
+                Mon - Fri 9:00am to 6:00pm (GMT-5 CDMX)
+              </p>
+            </div>
+            <div class="flex flex-col gap-5 sm:w-[20%]">
+              <h3 class="text-white text-[20px] font-semibold">Navigation</h3>
+              <div class="flex flex-col gap-2">
+                <a href="" class="text-[#B6C9C9]">Home</a>
+                <a href="" class="text-[#B6C9C9]">About Us</a>
+                <a href="" class="text-[#B6C9C9]">Our Service</a>
+                <a href="" class="text-[#B6C9C9]">Contact</a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-row justify-between items-center border-t-1 border-[#b6c9c95e] py-3"
+          >
+            <p class="text-[#B6C9C9]">© 2020 - 2025 Iuvo</p>
+            <ul class="flex flex-row gap-3">
+              <li class="text-[#B6C9C9]">Terms of Service</li>
+              <li class="text-[#B6C9C9]">Privacy Policy</li>
+            </ul>
+            <img src="./img/logo-mini.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
