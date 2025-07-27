@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="relative z-10 bg-[#0B1D2A] px-4 sm:px-6 lg:px-12 py-4 sm:py-6">
+      <div
+        class="flex items-center justify-between max-w-6xl justify-self-center w-full"
+      >
+        <!-- Logo -->
+        <div class="flex items-center space-x-2 sm:space-x-3">
+          <!-- Logo Image -->
+           <a href="./index.html">
+             <img
+               src="../img/logo.svg"
+               alt="Iuvo Consulting Logo"
+               class="w-40 hover:scale-105 transition-transform duration-300"
+               loading="eager"
+             />
+             </a>
+        </div>
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a
+            href="./index.html"
+            class="text-white hover:text-[#38ADA7] transition-colors"
+            >Home</a
+          >
+          <a
+            href="./about.html"
+            class="text-gray-300 hover:text-[#38ADA7] transition-colors"
+            >About us</a
+          >
+          <a
+            href="./service.html"
+            class="text-gray-300 hover:text-[#38ADA7] transition-colors"
+            >Our Services</a
+          >
+          <a href="contact.html">
+            <button
+              class="bg-[#38ADA7] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#4f8280] transition-colors cursor-pointer"
+            >
+              Contact us
+            </button>
+          </a>
+        </div>
+        <!-- Mobile Menu Button -->
+        <button class="lg:hidden text-white p-2" onclick="toggleMobileMenu()">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <!-- Mobile Navigation Menu -->
+    <div
+      class="lg:hidden fixed inset-0 bg-[#0B1D2A] bg-opacity-95 z-50 hidden"
+      id="mobile-menu"
+    >
+      <div
+        class="flex flex-col items-center justify-center h-full space-y-6 sm:space-y-8 px-6"
+      >
+        <a
+          href="./index.html"
+          class="text-white text-xl sm:text-2xl font-medium hover:text-[#38ADA7] transition-colors"
+          onclick="toggleMobileMenu()"
+          >Home</a
+        >
+        <a
+          href="./about.html"
+          class="text-gray-300 text-xl sm:text-2xl hover:text-[#38ADA7] transition-colors"
+          onclick="toggleMobileMenu()"
+          >About us</a
+        >
+        <a
+          href="./service.html"
+          class="text-gray-300 text-xl sm:text-2xl hover:text-[#38ADA7] transition-colors"
+          onclick="toggleMobileMenu()"
+          >Our Services</a
+        >
+        <a href="contact.html">
+          <button
+            class="bg-[#38ADA7] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-[#38ADA7]-dark transition-colors"
+            onclick="toggleMobileMenu()"
+          >
+            Contact us
+          </button>
+        </a>
+        <button
+          class="absolute top-6 right-6 sm:top-8 sm:right-8 text-white text-2xl sm:text-3xl p-2"
+          onclick="toggleMobileMenu()"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <section class="bg-cover bg-no-repeat flex-row justify-items-center relative" style="background-image: url('../img/bg-contact.png');">
+      <div class="bg-[#0B1D2A] opacity-90 w-full h-full py-20 flex-row justify-items-center absolute z-0">
+        </div>
+        <div class="max-w-6xl w-full flex flex-col gap-10 z-1 relative px-4 sm:px-6 lg:px-12 py-8 sm:py-12">
+          <h1 class="text-center font-bold text-[30px] text-white ">Contact Us</h1>
+          <form action="" class="flex flex-col gap-3">
+            <div class="flex flex-col sm:flex-row gap-3">
+              <input type="text" name="name" id="name" class="bg-[#E9FFFE] text-[#38ADA7] focus:outline-0 rounded-sm px-3 py-3 w-full" placeholder="Name"/>
+              <input type="text" name="company" id="company" class="bg-[#E9FFFE] text-[#38ADA7] focus:outline-0 rounded-sm px-3 py-3 w-full" placeholder="Company"/>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <input type="number" name="phone" id="phone" class="bg-[#E9FFFE] text-[#38ADA7] focus:outline-0 rounded-sm px-3 py-3 w-full" placeholder="Phone"/>
+              <input type="email" name="email" id="email" class="bg-[#E9FFFE] text-[#38ADA7] focus:outline-0 rounded-sm px-3 py-3 w-full" placeholder="Email"/>
+            </div>
+            <textarea name="message" id="message" class="min-h-52 bg-[#E9FFFE] text-[#38ADA7] focus:outline-0 rounded-sm px-3 py-3 w-full"></textarea>
+            <button type="submit" class="bg-[#085E5A] rounded-sm w-fit text-white px-20 py-3 self-center mt-5">Submit</button>
+          </form>
+        </div>
+      
+    </section>
+
+    <footer class="flex-row justify-items-center bg-[#0B1D2A] lg:py-20 px-4 sm:px-6 lg:px-12 py-8 sm:py-12">
+      <div class="max-w-6xl">
+        <div class="flex flex-col gap-10">
+          <div class="flex flex-row justify-between gap-10 sm:gap-20 flex-wrap sm:flex-nowrap ">
+            <div class="flex flex-col gap-5 sm:w-[40%]">
+              <img src="../img/logo.svg" alt="logo" class="w-50">
+              <h3 class="text-[#E8965A] font-bold text-[20px] ">Digital Solutions That Drive Results</h3>
+              <div class="flex flex-col gap-2">
+                <p class="text-[#B6C9C9] text-[14px]">Questions and contact</p>
+                <p class="text-white font-bold text-[16px]">contact@iuvosolution.com</p>
+              </div>
+            </div>
+            <div class="flex flex-col gap-5 sm:w-[40%]">
+              <h3 class="text-white text-[20px] font-bold ">Our Office</h3>
+              <p class="text-[#B6C9C9] text-[16px]">Montes Urales 619 Piso 3 [Third floor] Lomas de Chapultepec, CDMX 11000</p>
+              <p class="text-[#B6C9C9] text-[16px]">Mon - Fri 9:00am to 6:00pm (GMT-5 CDMX)</p>
+            </div>
+            <div class="flex flex-col gap-5 sm:w-[20%]">
+              <h3 class="text-white text-[20px] font-bold ">Navigation</h3>
+              <div class="flex flex-col gap-2">
+                <a href="" class="text-[#B6C9C9]">Home</a>
+                <a href="" class="text-[#B6C9C9]">About Us</a>
+                <a href="" class="text-[#B6C9C9]">Our Service</a>
+                <a href="" class="text-[#B6C9C9]">Contact</a>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-row justify-between items-center border-t-1 border-[#b6c9c95e] py-3">
+            <p class="text-[#B6C9C9]">© 2020 - 2025 Iuvo</p>
+            <ul class="flex flex-row gap-3">
+              <li class="text-[#B6C9C9]">
+                Terms of Service
+              </li>
+              <li class="text-[#B6C9C9]">
+                Privacy Policy
+              </li>
+            </ul>
+            <img src="../img/logo-mini.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
